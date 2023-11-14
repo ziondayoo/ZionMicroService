@@ -1,3 +1,6 @@
+using CatalogService.Database;
+using Microsoft.EntityFrameworkCore;
+
 namespace CatalogService
 {
     public class Program
@@ -12,6 +15,10 @@ namespace CatalogService
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<DatabaseContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
 
             var app = builder.Build();
 

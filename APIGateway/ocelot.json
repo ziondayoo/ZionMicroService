@@ -1,0 +1,19 @@
+{
+  "Routes": [
+    {
+      "UpstreamHttpMethod": [ "GET", "Post", "Delete" ],
+      "UpstreamPathTemplate": "/catalog",
+      "DownstreamPathTemplate": "/api/catalog",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44332
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+
+  }
+}
